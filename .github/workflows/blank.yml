@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           docker pull registry.k8s.io/kube-apiserver:v1.27.4
-          docker login --username=l雪红尘 --password='313500love@s*..' registry.cn-beijing.aliyuncs.com
+          docker login --username=${{ secrets.USR }} --password=${{ secrets.PSW }} registry.cn-beijing.aliyuncs.com
           docker tag registry.k8s.io/kube-apiserver:v1.27.4 registry.cn-beijing.aliyuncs.com/k8s_kubeadm_1-27-4/k8s-kubeadm-1.27.4:v1.27.4
           docker push registry.cn-beijing.aliyuncs.com/k8s_kubeadm_1-27-4/k8s-kubeadm-1.27.4:v1.27.4
           
